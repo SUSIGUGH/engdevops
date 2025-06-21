@@ -11,8 +11,8 @@ pipeline{
         
         stage('Send Dockerfile and crdb.sql to docker server'){
             steps{
-                sh 'scp engdevops/Dockerfile ec2-user@13.201.117.157:/home/ec2-user/'
-                sh 'scp engdevops/crdb.sql ec2-user@13.201.117.157:/home/ec2-user/'
+                sh 'scp master/Dockerfile ec2-user@13.201.117.157:/home/ec2-user/'
+                sh 'scp master/crdb.sql ec2-user@13.201.117.157:/home/ec2-user/'
             }
         }
         
