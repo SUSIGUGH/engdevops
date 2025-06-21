@@ -25,14 +25,12 @@ pipeline{
         stage('Tag the image'){
             steps{
                 sh 'ssh ec2-user@13.201.117.157 "sudo docker image tag mysql-jenkins 6esusigugh/mysql-jenkins:v1"'
-		sh 'ls -ltr'
             }
         }
         
          stage('Send image to docker hub'){
             steps{
-                sh 'ssh ec2-user@13.201.117.157 "sudo docker login -u "susigugh" -p "Joomla#5647" && sudo docker push 6esusigugh/mysql-jenkins:v1"'
-                sh 'ls -ltr'
+                sh 'ssh ec2-user@13.201.117.157 "sudo docker login -u "6esusigugh" -p "Joomla#5647" && sudo docker push 6esusigugh/mysql-jenkins:v1"'
             }
         } 
     }
