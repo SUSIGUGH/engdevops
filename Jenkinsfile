@@ -29,17 +29,11 @@ pipeline{
             }
         }
         
-        // stage('Run HTTPD in remote server'){
-        //     steps{
-        //     sh 'ssh ec2-user@13.235.135.249 "sudo docker run -dit --name=susi-httpd01 -p8081:80 httpd"'
-        //     }
-        // }
-        
-        // stage('Run Container'){
-        //     steps{
-        //         sh 'sudo docker run -dit --name="httpd" -p80:80 httpd'
-        //     }
-        // }
-        
+         stage('Send image to docker hub'){
+            steps{
+                sh 'ssh ec2-user@13.201.117.157 "sudo docker login -u "susigugh" -p "Joomla#5647" && sudo docker push 6esusigugh/mysql-jenkins:v1"'
+                sh 'ls -ltr'
+            }
+        } 
     }
 }
