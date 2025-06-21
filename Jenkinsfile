@@ -25,6 +25,7 @@ pipeline{
         stage('Tag the image'){
             steps{
                 sh 'ssh ec2-user@13.201.117.157 "sudo docker image tag mysql-jenkins 6esusigugh/mysql-jenkins:v1"'
+		sh 'ls -ltr'
             }
         }
         
